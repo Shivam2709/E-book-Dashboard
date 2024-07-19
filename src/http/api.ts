@@ -20,17 +20,17 @@ api.interceptors.request.use((config) => {
 })
 
 export const login = async (data: { email: string; password: string }) => {
-    return api.post('/users/login', data);
+    return api.post('/api/users/login', data);
 };
 
 export const register = async (data: { name: string; email: string; password: string }) => {
-    return api.post('/users/register', data);
+    return api.post('/api/users/register', data);
 };
 
 export const getBooks = async () => api.get('/books');
 
 export const createBook = async(data: FormData) => 
-    api.post('/books', data, {
+    api.post('/api/books', data, {
         headers: {
             'Content-Type': 'multipart/form-data',
         },
